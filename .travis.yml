@@ -1,4 +1,8 @@
 script:
   - sudo apt-get update -qq
   - sudo apt-get install -y wine
-  - echo test
+  - wget https://static.rust-lang.org/dist/rust-1.0.0-x86_64-pc-windows-gnu.exe
+  - wine --version
+  - wine rust-1.0.0-x86_64-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
+  - wine C:/Rust/bin/rustc -V
+  - wine C:/Rust/bin/cargo -V
