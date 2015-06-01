@@ -5,6 +5,6 @@ script:
   - wine --version
   - sudo Xvfb :1 &
   - export DISPLAY=":1.0"
-  - wine cmd.exe /c rust-1.0.0-x86_64-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
+  - wine rust-1.0.0-x86_64-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
   - wine C:/Rust/bin/rustc -V
   - wine C:/Rust/bin/cargo -V
