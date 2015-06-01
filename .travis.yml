@@ -1,2 +1,3 @@
 script:
+  - apt-get install wine
   - echo test
