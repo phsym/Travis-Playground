@@ -1,12 +1,17 @@
-script:
+before_script:
+  - sudo add-apt-repository ppa:ubuntu-wine/ppa
   - sudo apt-get update -qq
-  - sudo apt-get install -y wine xvfb
+  - sudo apt-get install wine1.6
+
+script:
+  - wine --version
+  # - sudo apt-get update -qq
+  # - sudo apt-get install -y wine xvfb
   - wget http://static.rust-lang.org/dist/rust-1.0.0-x86_64-pc-windows-gnu.exe
 #  - wget http://static.rust-lang.org/dist/rust-1.0.0-i686-pc-windows-gnu.exe
 #  - WINEARCH=win32
-  - wine --version
-  - sudo Xvfb :1 &
-  - export DISPLAY=":1.0"
+  # - sudo Xvfb :1 &
+  # - export DISPLAY=":1.0"
   - wine rust-1.0.0-x86_64-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
 #  - wine rust-1.0.0-i686-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
   - wine C:/Rust/bin/rustc -V
