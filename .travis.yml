@@ -10,6 +10,7 @@ script:
 #  - WINEARCH=win32
   - sudo Xvfb :1 &
   - export DISPLAY=":1.0"
+  - export WINEDEBUG="-fixme"
   - wine rust-1.0.0-x86_64-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
 #  - wine rust-1.0.0-i686-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
   - wine C:/Rust/bin/rustc -V
