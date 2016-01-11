@@ -11,6 +11,7 @@ RELEASE="master"
 
 cargo doc || exit 1
 
+git fetch
 git checkout gh-pages
 rm -Rf "${RELEASE}"
 mkdir "${RELEASE}"
