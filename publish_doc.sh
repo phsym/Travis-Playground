@@ -23,7 +23,7 @@ cp -R target/doc/* "gh-pages/${RELEASE}/"
 echo "<html><head><title>Prettytable-rs API documentation</title></head><body>" > gh-pages/index.html
 for entry in $(ls -1 gh-pages)
 do
-	if [ -d $entry ]; then
+	if [ -d "gh-pages/$entry" ]; then
 		echo "<a href='${entry}'>${entry}</a><br/>" >> gh-pages/index.html
 	fi
 done
