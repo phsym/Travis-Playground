@@ -1,10 +1,11 @@
 //! Test crate that only prints "Hello World"
 
-/// Say Hello to the world !!!
+/// Say Hello to the world
 pub fn hello_world() {
 	println!("Hello World!!!");
 }
 
-fn main() {
+/// Program entry point
+pub fn main() {
 	hello_world();
 }
