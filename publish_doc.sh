@@ -20,6 +20,15 @@ mkdir "gh-pages/${RELEASE}"
 echo "<meta http-equiv=refresh content=0;url=test/index.html>" > target/doc/index.html 
 cp -R target/doc/* "gh-pages/${RELEASE}/"
 
+echo "<html><head><title>Prettytable-rs API documentation</title></head><body>" > gh-pages/index.html
+for entry in $(ls -1 gh-pages)
+do
+	if [ -d $entry ]; then
+		echo "<a href='${entry}'>${entry}</a><br/>" >> gh-pages/index.html
+	fi
+done
+echo "</body></html>" >> gh-pages/index.html
+
 cd gh-pages
 git config user.name "travis-ci"
 git config user.email "travis@travis-ci.org"
