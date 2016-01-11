@@ -19,8 +19,8 @@ echo "<meta http-equiv=refresh content=0;url=test/index.html>" > target/doc/inde
 cp -R target/doc/* "gh-pages/${RELEASE}/"
 
 cd gh-pages
-# git config user.name "travis"
-# git config user.email "none@travis-ci.org"
+git config user.name "travis-ci"
+git config user.email "travis@travis-ci.org"
 
 git add --all
 git commit -m "Updated documentation"
