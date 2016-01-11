@@ -3,11 +3,13 @@
 echo "Rust version : ${TRAVIS_RUST_VERSION}"
 
 [ $TRAVIS_PULL_REQUEST = false ] || exit 0
-[ $TRAVIS_BRANCH = master ] || exit 0
-
-RELEASE="master"
-
-[ -z $TRAVIS_TAG ] || RELEASE=$TRAVIS_TAG
+if [ $TRAVIS_BRANCH = master ]; then
+	RELEASE="master"
+elif [ -z $TRAVIS_TAG ]; then
+	RELEASE=$TRAVIS_TAG
+else
+	exit 1
+fi
 
 cargo doc || exit 1
 
