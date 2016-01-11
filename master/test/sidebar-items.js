@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["hello_world","Say Hello to the world !!!"]]});
+initSidebarItems({"fn":[["hello_world","Say Hello to the world"],["main","Program entry point"]]});
