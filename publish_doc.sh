@@ -11,7 +11,7 @@ RELEASE="master"
 
 cargo doc || exit 1
 
-git fetch
+git fetch https://github.com/phsym/Travis-Playground.git
 git checkout gh-pages
 rm -Rf "${RELEASE}"
 mkdir "${RELEASE}"
