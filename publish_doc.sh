@@ -5,7 +5,7 @@ echo "Rust version : ${TRAVIS_RUST_VERSION}"
 [ $TRAVIS_PULL_REQUEST = false ] || exit 0
 if [ $TRAVIS_BRANCH = master ]; then
 	RELEASE="master"
-elif [ -z $TRAVIS_TAG ]; then
+elif [ ! -z $TRAVIS_TAG ]; then
 	RELEASE=$TRAVIS_TAG
 else
 	exit 1
