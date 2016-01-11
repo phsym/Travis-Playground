@@ -1,5 +1,10 @@
 language: rust
 
+rust:
+  - stable
+  - beta
+  - nightly
+
 env:
   global:
     secure: kWXgPDVH1LWqu0gOhTK0wIBMLj+qXp16yqM2gKFL+sUSCpVcpJeq4CQxpd34vj9hPwyQPS2yz+XdCCXpmLLwopbAV1UWA+jNPnulfgxfeyUlYw4rSi4TuH8ojNA5CxTGADgMellEtP5mJAols6YVUPdWd//vyv3xvyG7rCniqyYjlBrPV/O0sGVos2fSSmkXtEHyGFANEVulr9jJhyR2EB+3PmBICWBa7piONEnEyE23mQljBmrArQdHEnDlIMYYY0ksNzPS2rMbv56Futhl11aZxRd64FUU2AHIf+RS1NzlBaEh8zT+hukXX+c3MhbUQCH1lVUzbsMiVZ0u95CxmfQgzOLxdOE93wkHoXI83Dh7cu8VhMXk0sS/m4Kqcs8VklUtPW6TzqSSRW49G0Pw9rA3Muma//45joRNvCDW4PAVTUqBmv+Tef5zfjvdterSYm2O1o2bJ/jZLU7Nt8O4meqkoXZkC8r/Lkd8AO7Gq6S0QKiAB3psIMp5EivIvfxPIt/Kq9PxxOEPAX0ANPxyi/PkifclD/eE2+WVT0sb91ULl0hDXLHlTWtfBPHIG2y7Fsf+d6Mw4qsflbnGtlZhOa8/+zsJXHgJ/hxgsHJjN2NIe+KcUXOEkphtrD8930YuNM86EUDSAYBg6pLIc8n5R0+BbqmcYw27alMnSjbWpdY=

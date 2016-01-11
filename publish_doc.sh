@@ -2,6 +2,7 @@
 
 echo "Rust version : ${TRAVIS_RUST_VERSION}"
 
+[ $TRAVIS_RUST_VERSION != "stable" ] || exit 0
 [ $TRAVIS_PULL_REQUEST = false ] || exit 0
 if [ $TRAVIS_BRANCH = master ]; then
 	RELEASE="master"
