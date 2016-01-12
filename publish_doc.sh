@@ -21,14 +21,14 @@ mkdir "gh-pages/${RELEASE}"
 echo "<meta http-equiv=refresh content=0;url=test/index.html>" > target/doc/index.html 
 cp -R target/doc/* "gh-pages/${RELEASE}/"
 
-echo "<html><head><title>Prettytable-rs API documentation</title></head><body>" > gh-pages/index.html
+INDEX="gh-pages/index.html"
+echo "<html><head><title>Prettytable-rs API documentation</title></head><body>" > $INDEX
+echo "<h1>API documentaion for ${TRAVIS_REPO_SLUG}</h1>" >> $INDEX
 for entry in $(ls -1 gh-pages)
 do
-	if [ -d "gh-pages/$entry" ]; then
-		echo "<a href='${entry}'>${entry}</a><br/>" >> gh-pages/index.html
-	fi
+	[ -d "gh-pages/$entry" ] && echo "<a href='${entry}'>${entry}</a><br/>" >> $INDEX
 done
-echo "</body></html>" >> gh-pages/index.html
+echo "</body></html>" >> $INDEX
 
 cd gh-pages
 git config user.name "travis-ci"
