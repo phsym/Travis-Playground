@@ -26,4 +26,4 @@ script:
 # - wine C:/Rust/bin/cargo -V
 - cargo build && cargo test
 
-after_success: ./publish_doc.sh test
+after_success: sh publish_doc.sh test
