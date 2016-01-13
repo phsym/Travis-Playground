@@ -22,7 +22,7 @@ cargo doc || exit 1
 if [ ! -d target/doc/$CRATE_NAME ]; then
 	echo "Cannot find target/doc/$CRATE_NAME"
 	exit 1
-done
+fi
 
 git clone --depth=50 --branch=gh-pages https://github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 rm -Rf "gh-pages/${RELEASE}"
