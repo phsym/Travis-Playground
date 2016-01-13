@@ -1,5 +1,11 @@
 #!/bin/sh
 
+CRATE_NAME="$1"
+if [ -z $CRATE_NAME ]; then
+	echo "Please provide crate name as first argument"
+	exit 1
+fi
+
 [ $TRAVIS_RUST_VERSION = "stable" ] || exit 0
 [ $TRAVIS_PULL_REQUEST = false ] || exit 0
 if [ $TRAVIS_BRANCH = master ]; then
@@ -13,16 +19,20 @@ fi
 echo "Publishing documentation for $RELEASE"
 
 cargo doc || exit 1
+if [ ! -d target/doc/$CRATE_NAME ]; then
+	echo "Cannot find target/doc/$CRATE_NAME"
+	exit 1
+done
 
 git clone --depth=50 --branch=gh-pages https://github.com/${TRAVIS_REPO_SLUG}.git gh-pages
 rm -Rf "gh-pages/${RELEASE}"
 mkdir "gh-pages/${RELEASE}"
 
-echo "<meta http-equiv=refresh content=0;url=test/index.html>" > target/doc/index.html 
+echo "<meta http-equiv=refresh content=0;url=${CRATE_NAME}/index.html>" > target/doc/index.html 
 cp -R target/doc/* "gh-pages/${RELEASE}/"
 
 INDEX="gh-pages/index.html"
-echo "<html><head><title>Prettytable-rs API documentation</title></head><body>" > $INDEX
+echo "<html><head><title>${TRAVIS_REPO_SLUG} API documentation</title></head><body>" > $INDEX
 echo "<h1>API documentaion for ${TRAVIS_REPO_SLUG}</h1>" >> $INDEX
 for entry in $(ls -1 gh-pages)
 do
