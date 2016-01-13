@@ -33,7 +33,7 @@ cp -R target/doc/* "gh-pages/${RELEASE}/"
 
 INDEX="gh-pages/index.html"
 echo "<html><head><title>${TRAVIS_REPO_SLUG} API documentation</title></head><body>" > $INDEX
-echo "<h1>API documentaion for ${TRAVIS_REPO_SLUG}</h1>" >> $INDEX
+echo "<h1>API documentation for crate $CRATE_NAME (<a href='https://github.com/${TRAVIS_REPO_SLUG}'>${TRAVIS_REPO_SLUG}</a>)</h1>" >> $INDEX
 for entry in $(ls -1 gh-pages)
 do
 	[ -d "gh-pages/$entry" ] && echo "<a href='${entry}'>${entry}</a><br/>" >> $INDEX
