@@ -26,4 +26,6 @@ script:
 # - wine C:/Rust/bin/cargo -V
 - cargo build && cargo test
 
-after_success: sh publish_doc.sh test
+after_success: 
+  - git clone https://gist.github.com/deaf3815d2eecce72279.git ./publish_doc
+  - sh ./publish_doc/publish_doc.sh test
