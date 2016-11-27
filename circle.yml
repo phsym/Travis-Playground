@@ -12,6 +12,11 @@ dependencies:
 
 ## Customize test commands
 test:
-  override:
-    - cargo build
-    - cargo test
+    override:
+        - cargo build
+        - cargo test
+        - cargo doc
+
+    post:
+        - mkdir -p $CIRCLE_ARTIFACTS
+        - mv target/debug/test.exe $CIRCLE_ARTIFACTS
