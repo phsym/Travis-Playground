@@ -1,14 +1,13 @@
-before_script:
-  - sudo add-apt-repository ppa:ubuntu-wine/ppa -y
-  - sudo apt-get update -qq
-  - sudo apt-get install wine1.6 xvfb
-  - sudo Xvfb :1 &
-  - export DISPLAY=":1.0"
-  - export WINEDEBUG="fixme-all"
-  - wine --version
-
+language: rust
+rust:
+- stable
+- beta
+- nightly
+env:
+  global:
+  - secure: Xx7GX2YQjsbjOtYXUWl+IEc/g96APPftSRBKoAbKZ0Gr8q47QGM9lpBgJqAx0PZY5z+ZNHGCu7c+o96fmPrnaTSsGcU9fX2W8B2eJZEk62CD8GUHyn1NkQGY1hm0j9ya0yJavNaXup0rmLNwUy6VXE3XxHoM9vSzCkNgcgn/EPe/+vXkMNn6NBLB3317HwyHDbSNXGOP0a3tPuo9URV2XrJxQEMlTKJYS3A+RtkvXc56fvdd1qsGbW4JiS16cLLn/pysQZRw1lidypWdfwbF5BoNmSwe9pNmZVZ8K0EIj/8b+YRGSwYWmqz5uuP7VrrlAY5r3tevP+fVi8NEFQYtNZzscZhOTWnKZq3iA2Cb/Wh45I+BQrSHBAhciLuLOX0c6EvSSuffSw9IRx8M1odKLa9hYX6wf7G2I4j/P3iz8743CEqZoY9Qskfn2HaZGLv105NqGMZWYkx2Bu8dCZOIZyR76KzGU5u+j5PFWNrpeCO/2oxslT7dszkchSPbozAkWriA2l5UWNlSTEw7Pd7S/gCzbZD7uempzMIovJJVBJy+IdASP+6ywVDsHgOGDa0ptPtKffGskF/gFr/i0ZuOYQDFMW6HQTm0nBHRc67GFKPmp2B3ASp5Hs7vc/3usPhC5OIfeiqNRwS8A3DTdnBp1K+Ybsxl4PihRgAYx8NYHeM=
 script:
-  - wget http://static.rust-lang.org/dist/rust-1.0.0-x86_64-pc-windows-gnu.exe
-  - wine rust-1.0.0-x86_64-pc-windows-gnu.exe /VERYSILENT /NORESTART /DIR="C:/Rust"
-  - wine C:/Rust/bin/rustc -V
-  - wine C:/Rust/bin/cargo -V
+- cargo build && cargo test
+after_success:
+- git clone https://gist.github.com/deaf3815d2eecce72279.git ./publish_doc
+- sh ./publish_doc/publish_doc.sh test
