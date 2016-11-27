@@ -20,4 +20,4 @@ test:
     post:
         - mkdir -p $CIRCLE_ARTIFACTS
         - mv target/debug/test $CIRCLE_ARTIFACTS
-        - mv target/debug/doc $CIRCLE_ARTIFACTS
+        - mv target/doc $CIRCLE_ARTIFACTS
