@@ -11,6 +11,9 @@ machine:
 #     - npm install coffeescript # install from a different package manager
 #     - gem uninstall bundler # use a custom version of bundler
 #     - gem install bundler --pre
+dependencies:
+    post:
+        - curl -sSf https://static.rust-lang.org/rustup.sh | sh
 
 ## Customize test commands
 test:
