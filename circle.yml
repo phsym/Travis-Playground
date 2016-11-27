@@ -16,6 +16,10 @@ dependencies:
         - curl -sSf https://static.rust-lang.org/rustup.sh | sh
 
 ## Customize test commands
+build:
+    override:
+        - cargo build
+
 test:
   override:
     - cargo test # use PHPunit for testing

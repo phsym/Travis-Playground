@@ -9,3 +9,11 @@ pub fn hello_world() {
 pub fn main() {
 	hello_world();
 }
+
+#[cfg(test)]
+mod tests {
+	#[test]
+	fn test_dummy() {
+		assert!(1==1);
+	}
+}
