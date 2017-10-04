@@ -9,14 +9,15 @@
 
     <title>main.rs.html -- source</title>
 
-    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
     
 
     
     
 </head>
-<body class="rustdoc">
+<body class="rustdoc source">
     <!--[if lte IE 8]>
     <div class="warning">
         This old browser is unsupported and will most likely display funky
@@ -42,7 +43,7 @@
         </form>
     </nav>
 
-    <section id='main' class="content source"><pre class="line-numbers"><span id="1"> 1</span>
+    <section id='main' class="content"><pre class="line-numbers"><span id="1"> 1</span>
 <span id="2"> 2</span>
 <span id="3"> 3</span>
 <span id="4"> 4</span>
@@ -61,24 +62,24 @@
 <span id="17">17</span>
 <span id="18">18</span>
 <span id="19">19</span>
-</pre><pre class='rust '>
-<span class='doccomment'>//! Test crate that only prints &quot;Hello World&quot;</span>
+</pre><pre class="rust ">
+<span class="doccomment">//! Test crate that only prints &quot;Hello World&quot;</span>
 
-<span class='doccomment'>/// Say Hello to the world</span>
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>hello_world</span>() {
-	<span class='macro'>println</span><span class='macro'>!</span>(<span class='string'>&quot;Hello World!!!&quot;</span>);
+<span class="doccomment">/// Say Hello to the world</span>
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">hello_world</span>() {
+	<span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;Hello World!!!&quot;</span>);
 }
 
-<span class='doccomment'>/// Program entry point</span>
-<span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>main</span>() {
-	<span class='ident'>hello_world</span>();
+<span class="doccomment">/// Program entry point</span>
+<span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">main</span>() {
+	<span class="ident">hello_world</span>();
 }
 
-<span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>test</span>)]</span>
-<span class='kw'>mod</span> <span class='ident'>tests</span> {
-	<span class='attribute'>#[<span class='ident'>test</span>]</span>
-	<span class='kw'>fn</span> <span class='ident'>test_dummy</span>() {
-		<span class='macro'>assert</span><span class='macro'>!</span>(<span class='number'>1</span><span class='op'>==</span><span class='number'>1</span>);
+<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">test</span>)]</span>
+<span class="kw">mod</span> <span class="ident">tests</span> {
+	<span class="attribute">#[<span class="ident">test</span>]</span>
+	<span class="kw">fn</span> <span class="ident">test_dummy</span>() {
+		<span class="macro">assert</span><span class="macro">!</span>(<span class="number">1</span><span class="op">==</span><span class="number">1</span>);
 	}
 }
 </pre>
@@ -136,13 +137,10 @@
     
 
     <script>
-        window.rootPath = "../../../";
+        window.rootPath = "../../";
         window.currentCrate = "test";
-        window.playgroundUrl = "";
     </script>
-    <script src="../../../jquery.js"></script>
-    <script src="../../../main.js"></script>
-    
-    <script defer src="../../../search-index.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
 </body>
 </html>
